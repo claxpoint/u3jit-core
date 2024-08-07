@@ -27,4 +27,8 @@ In [docker-compse](docker-compose.yml#L17) define `SOCKS_USERNAME`, `SOCKS_PASSW
 # mtproxy (MTProto Proxy)
 You should generate some random 32 hex strings ([for example here](https://www.browserling.com/tools/random-hex)) and define them in [config_mtproxy_server.py](config_mtproxy_server.py#L4).
 After docker container up you could read secret keys from ```docker-compose logs mtproxy```
+
+
+# NetBaan: TGP2VPN
+A new way to use telegram proxies to bypass internet filtering - with U3jit FilterBreak System
 and find a line like ```tg: YYY.....``` YYY is your key for a mtproxy
