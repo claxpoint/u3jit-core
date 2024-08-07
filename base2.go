@@ -9,8 +9,8 @@ import (
 
 func main() {
     http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-        if r.Host == "localhost:8080" { // Check if the request is coming from the web tunnel
-            targetURL := "http://example.com" // Replace with your target URL
+        if r.Host == "localhost:8080" { 
+            targetURL := "http://example.com"
             targetResp, err := http.Get(targetURL + r.URL.Path)
             if err != nil {
                 http.Error(w, err.Error(), http.StatusInternalServerError)
@@ -18,10 +18,10 @@ func main() {
             }
             defer targetResp.Body.Close()
 
-            // Copy the response body to the client
+            
         -io.Copy(w, targetResp.Body)
 
-            // Set the Content-Type header
+         
             w.Header().Set("Content-Type", targetResp.Header.Get("Content-Type"))
         } else {
             http.Error(w, "Invalid request", http.StatusForbidden)
